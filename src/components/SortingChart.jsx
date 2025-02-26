@@ -61,7 +61,7 @@ function SortingChart() {
                         sortingState.algorithm === "radix_sort" ? "bg-turquoise-dark" : "hover:bg-carbon-light"
                     } transition-all`}
                 >
-                    Radix Sort
+                    Heap Sort
                 </button>
             </div>
 

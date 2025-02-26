@@ -80,20 +80,23 @@ const algorithmInfos = {
 		`
 	},
 	radix_sort: {
-		name: "Radix Sort",
+		name: "Heap Sort",
 		time_complexity: {
-			best: ['O(nk)', 'green-800'],
-			average: ['O(nk)', 'green-800'],
-			worst: ['O(nk)', 'green-800']
+			best: ['O(n log(n))', 'green-800'],
+			average: ['O(n log(n))', 'green-800'],
+			worst: ['O(n log(n))', 'green-800']
 		},
-		space_complexity: ['O(n+k)', 'yellow-600'],
+		space_complexity: ['O(n)', 'yellow-600'],
 		description: `
-			Radix Sort is a non-comparative sorting algorithm that sorts elements based on their digits or characters. It works by iterating through each digit or character of the elements and sorting them based on their values at that position. The sorting process is repeated for each digit or character until all elements are sorted.
+			Heap Sort is a comparison-based sorting algorithm that utilizes a binary heap data structure to efficiently sort elements. It works by first building a max heap from the given input, ensuring that the largest element is at the root. The sorting process then involves repeatedly extracting the maximum element from the heap, moving it to the end of the array, and rebuilding the heap until all elements are sorted.
 
-			Radix Sort can be performed using either the Least Significant Digit (LSD) or Most Significant Digit (MSD) approach. LSD Radix Sort starts by sorting the elements based on their least significant digit, and then moves on to the next digit until all digits have been sorted. MSD Radix Sort, on the other hand, starts by sorting the elements based on their most significant digit, and then moves on to the next digit until all digits have been sorted.
+Heap Sort operates in two main phases:
 
-			One of the advantages of Radix Sort is that it has a time complexity of O(nk), where n is the number of elements and k is the number of digits or characters in the elements. This makes it an efficient algorithm for sorting large data sets, especially when the number of digits or characters is small. However, Radix Sort may not be as efficient as some other sorting algorithms for smaller data sets, and it requires additional memory space to store the intermediate results during sorting.
-		`
+Heap Construction: The input array is transformed into a max heap, where each parent node is greater than its child nodes. This is typically done using the heapify process in O(n) time.
+Heap Sorting: The root element (largest value) is swapped with the last element, reducing the heap size, and then heapify is applied again to restore the heap property. This process continues until all elements are sorted.
+One of the key advantages of Heap Sort is its O(n log n) worst-case time complexity, making it more consistent than Quick Sort. Additionally, it is an in-place sorting algorithm, meaning it does not require extra memory beyond the input array. However, unlike Merge Sort, Heap Sort is not stable, meaning the relative order of equal elements may not be preserved.
+
+Due to its efficiency and worst-case guarantees, Heap Sort is widely used in applications requiring large-scale sorting, such as priority queues and graph algorithms like Dijkstra’s shortest path.		`
 	},
 }
 
